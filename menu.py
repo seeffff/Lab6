@@ -9,7 +9,7 @@ buffer = "true"
 
 
 def oneQuery():
-	db = _mysql.connect(host="localhost",user="root",passwd="people123",db="lab1")
+	db = _mysql.connect(host="localhost",user="root",passwd="password",db="database")
 	db.query("""SELECT * FROM wine;""")
 	r = db.store_result()
 	nR = r.num_rows()
@@ -19,7 +19,7 @@ def oneQuery():
 	db.close()
 
 def twoQuery():
-	db = _mysql.connect(host="localhost",user="root",passwd="people123",db="lab1")
+	db = _mysql.connect(host="localhost",user="root",passwd="password",db="database")
 	db.query("""SELECT * FROM Funding;""")
 	r = db.store_result()
 	nR = r.num_rows()
@@ -29,7 +29,7 @@ def twoQuery():
 	db.close()
 
 def threeQuery():
-	db = _mysql.connect(host="localhost",user="root",passwd="people123",db="lab1")
+	db = _mysql.connect(host="localhost",user="root",passwd="password",db="database")
 	db.query("""SELECT * FROM Future;""")
 	r = db.store_result()
 	nR = r.num_rows()
@@ -40,7 +40,7 @@ def threeQuery():
 	
 
 def fourQuery():
-	db = _mysql.connect(host="localhost",user="root",passwd="people123",db="lab1")
+	db = _mysql.connect(host="localhost",user="root",passwd="password",db="database")
 	db.query("""SELECT vineyardID FROM Vineyard WHERE vineyardID not in (select vineyardID from Future)""")
 	r = db.store_result()
 	nR = r.num_rows()
@@ -52,7 +52,7 @@ def fourQuery():
 	db.close()
 
 def fiveQuery():
-	db = _mysql.connect(host="localhost",user="root",passwd="people123",db="lab1")
+	db = _mysql.connect(host="localhost",user="root",passwd="password",db="database")
 	db.query("""SELECT futureID FROM Future WHERE futureID in (select futureID from Funding)""")
 	r = db.store_result()
 	nR = r.num_rows()
